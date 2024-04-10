@@ -83,23 +83,30 @@ st.subheader("Assists you to store and retrieve prompts")
 # Add a search bar
 search_query = st.text_input("Search Prompts")
 
+# Show favorite
+show_favorites = st.checkbox('Show Favorites Only')
+
 # Add a sort by date
 sort_order = st.radio("Sort by", ("Newest", "Oldest"))
 
-# Create the base SQL query
+# Adjust SQL query based on search and favorite filter
 sql_query = "SELECT * FROM prompts"
 sql_params = []
 
 # Add search to the SQL query if there's a search query
 if search_query:
-    sql_query += " WHERE title ILIKE %s OR prompt ILIKE %s"
+    sql_query += " WHERE (title ILIKE %s OR prompt ILIKE %s)"
     sql_params.extend(['%' + search_query + '%', '%' + search_query + '%'])
 
+# Filter by favorites if the checkbox is checked
+if show_favorites:
+    if 'WHERE' in sql_query:
+        sql_query += " AND is_favorite = TRUE"  # Add AND clause to existing WHERE clause
+    else:
+        sql_query += " WHERE is_favorite = TRUE"  # Start WHERE clause if no other filters
+
 # Add sorting to the SQL query based on the sort order
-if sort_order == "Newest":
-    sql_query += " ORDER BY created_at DESC"
-else:
-    sql_query += " ORDER BY created_at ASC"
+sql_query += " ORDER BY created_at DESC" if sort_order == "Newest" else " ORDER BY created_at ASC"
 
 # Execute the combined SQL query
 cur.execute(sql_query, sql_params)
