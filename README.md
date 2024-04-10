@@ -25,7 +25,7 @@ streamlit run app.py
 ```
 
 ## Preview
-![image](https://github.com/Jingyii800/techin510-lab03/assets/112589476/7aed7f96-4dbe-4787-8db7-e108d8fd5665)
+![image](https://github.com/Jingyii800/techin510-lab03/assets/112589476/a62939bb-98b6-4e1e-adbc-7a21fe463b58)
 
 ## Lessons Learned
 - Streamlit Interactivity: Leveraging Streamlit's interactive widgets improves user engagement.
