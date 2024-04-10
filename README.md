@@ -7,7 +7,7 @@ Welcome to the Prompt Library, the ideal place for storing and querying custom C
 - **Prompt Search**: Quickly find prompts with a keyword search function.
 - **Favorite**: Mark prompts as favorites for swift access.
 - **Sort and Filter**: Organize your prompts by date or favorites.
-- **Prompt Templates**: Save and apply templates for generating ChatGPT prompts.
+- **Prompt Templates**: Copy templates for generating ChatGPT prompts.
 
 ## Getting Started
 
