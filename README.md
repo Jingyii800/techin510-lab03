@@ -11,10 +11,16 @@ Welcome to the Prompt Library, the ideal place for storing and querying custom C
 
 ## Getting Started
 
-Clone this repository and set up your virtual environment:
-
+- Clone this repository and set up your virtual environment:
 ```bash
 pip install -r requirements.txt
+```
+- Create a database and paste the database URL in a file named '.env":
+```bash
+DATABASE_URL=[YOUR DATABASE URL]
+```
+- Run the app:
+```bash
 streamlit run app.py
 ```
 
