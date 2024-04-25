@@ -15,7 +15,7 @@ Welcome to the Prompt Library, the ideal place for storing and querying custom C
 ```bash
 pip install -r requirements.txt
 ```
-- Create a database and paste the database URL in a file named '.env":
+- Optional: Create a database and replace the database URL in '.env":
 ```bash
 DATABASE_URL=[YOUR DATABASE URL]
 ```
